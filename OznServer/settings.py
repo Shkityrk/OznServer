@@ -14,7 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TESSERACT_PATH = 'C:\\Program Files\\Tesseract-OCR'
+# TESSERACT_PATH = 'C:\\Program Files\\Tesseract-OCR'
+TESSERACT_PATH = '/usr/bin'
 
 
 # Quick-start development settings - unsuitable for production

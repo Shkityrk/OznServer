@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Image</h1>
+        <form class="upload-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="id_image">Select image:</label>
+            {{ form.image }}
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+</html>

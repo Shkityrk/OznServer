@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Result</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>OCR Result</h1>
+        <div class="result-text">{{ text }}</div>
+        <a class="upload-link" href="{% url 'upload_image' %}">Upload another image</a>
+    </div>
+</body>
+</html>

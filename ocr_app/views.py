@@ -8,7 +8,8 @@ from OznServer import settings
 from .forms import ImageUploadForm
 
 # Укажите путь к исполняемому файлу Tesseract
-pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+pytesseract.pytesseract.tesseract_cmd = os.path.join(settings.TESSERACT_PATH, 'tesseract')
+
 
 
 def upload_image(request):

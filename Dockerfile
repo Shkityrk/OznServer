@@ -7,6 +7,13 @@ ENV PYTHONUNBUFFERED=1
 # Установка рабочего каталога в /app
 WORKDIR /app
 
+# Установка зависимостей системы для Tesseract OCR
+RUN apt-get update && apt-get install -y \
+    tesseract-ocr \
+    libtesseract-dev \
+    libleptonica-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Копирование зависимостей проекта в контейнер
 COPY requirements.txt /app/
 

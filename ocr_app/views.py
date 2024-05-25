@@ -3,6 +3,9 @@ import os
 import pytesseract
 from PIL import Image
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.template.loader import render_to_string
+
 
 from OznServer import settings
 from .forms import ImageUploadForm
@@ -36,6 +39,10 @@ def upload_image(request):
                         lines.append(line)
             # Сборка отфильтрованного текста
             filtered_text = '\n'.join(lines)
+
+            if request.is_ajax():
+                html = render_to_string('result.html', {'text': filtered_text})
+                return JsonResponse({'html': html})
 
             return render(request, 'result.html', {'text': filtered_text})
     else:

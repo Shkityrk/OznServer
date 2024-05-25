@@ -8,12 +8,16 @@
 <body>
     <div class="container">
         <h1>Upload Image</h1>
-        <form class="upload-form" method="post" enctype="multipart/form-data">
+        <form class="upload-form" id="upload-form" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="id_image">Select image:</label>
             {{ form.image }}
             <button type="submit">Upload</button>
         </form>
+        <div id="paste-container" contenteditable="true" style="border: 2px dashed #ccc; padding: 20px; margin-top: 20px;">
+            Paste image here (Ctrl+V)
+        </div>
     </div>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>
